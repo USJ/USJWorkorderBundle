@@ -1,0 +1,40 @@
+services:
+    # mdb_workorder.event_listener.user_comment:
+    #     class: MDB\WorkorderBundle\EventListener\UserCommentSubscriber
+    #     tags:
+    #         - { name: doctrine.event_subscriber, connection: default }
+    mdb_workorder.event_listener.status_change:
+        class: MDB\WorkorderBundle\EventListener\StatusChangeListener
+        arguments: [%mdb_workorder.model.status_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}
+
+    mdb_workorder.event_listener.assignees_change:
+        class: MDB\WorkorderBundle\EventListener\AssigneesChangeListener
+        arguments: [%mdb_workorder.model.assign_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}
+
+    mdb_workorder.event_listener.due_date_change:
+        class: MDB\WorkorderBundle\EventListener\DueDateChangeListener
+        arguments: [%mdb_workorder.model.due_date_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}
+
+    mdb_workorder.event_listener.type_change:
+        class: MDB\WorkorderBundle\EventListener\TypeChangeListener
+        arguments: [%mdb_workorder.model.type_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}
+
+    mdb_workorder.event_listener.priority_change:
+        class: MDB\WorkorderBundle\EventListener\PriorityChangeListener
+        arguments: [%mdb_workorder.model.priority_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}
+
+    mdb_workorder.event_listener.add_asset:
+        class: MDB\WorkorderBundle\EventListener\AddAssetListener
+        arguments: [%mdb_workorder.model.asset_comment.class%]
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: preUpdate}

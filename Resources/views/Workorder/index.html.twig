@@ -1,0 +1,27 @@
+{% extends 'MDBWorkorderBundle::layout.html.twig' %}
+
+{% block headline %}
+    Work Orders <a class="btn btn-info" href="{{ path('mdb_workorder_workorder_new') }}"><i class="icon-plus icon-white"></i> Add work request</a>
+{% endblock %}
+{% block content %}
+	<div class="span12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Ref Id</th>
+					<th>Title</th>
+					<th>Priority</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for workorder in workorders %}
+				<tr>
+					<td>{{ workorder.referenceId }}</td>
+					<td>{{ workorder.title }}</td>
+					<td>{{ workorder.createdBy }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

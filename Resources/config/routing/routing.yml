@@ -1,0 +1,3 @@
+mdb_workorder_workorder_index:
+    resource: "@MDBWorkorderBundle/Controller/WorkorderController.php"
+    type: annotation

@@ -1,0 +1,24 @@
+{% extends 'MDBWorkorderBundle::layout.html.twig' %}
+{% block headline %}
+    Work Request
+{% endblock %}
+{% block content %}
+<div class="span12">
+    <form action="{{ path('mdb_workorder_workorder_new') }}" method="post">
+        <div class="row">
+            <div class="span8">
+                {{ form_row(form.title, {'attr':{'class': 'span8','placeholder':'Title'}} ) }}
+                {{ form_row(form.description, {'attr':{'class': 'span8','rows':'10','placeholder':'Leave a comment'}} ) }}
+            </div>
+        </div>
+        {{ form_rest(form) }}
+        <input type="submit" value="Create" class="btn btn-info"/>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#workorder_assignees").select2();
+    });
+</script>
+{% endblock %}
