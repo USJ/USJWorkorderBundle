@@ -33,6 +33,7 @@ class WorkorderManager extends BaseWorkorderManager
     public function createWorkorder()
     {
         $class = $this->class;
+
         return new $class;
     }
 

@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
 * @MongoDB\MappedSuperclass
@@ -11,7 +10,7 @@ abstract class AssignComment extends Comment
 {
     /**
      * Username of the assignee
-     * 
+     *
      * @MongoDB\String
      */
     protected $assignee;
@@ -36,6 +35,7 @@ abstract class AssignComment extends Comment
     {
         $this->add = false;
         $this->assignee = $assignee;
+
         return $this;
     }
 
@@ -43,6 +43,7 @@ abstract class AssignComment extends Comment
     {
         $this->add = true;
         $this->assignee = $assignee;
+
         return $this;
     }
 

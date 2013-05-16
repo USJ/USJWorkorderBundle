@@ -1,10 +1,10 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use MDB\WorkorderBundle\Events;
 /**
-* 
+*
 */
 class WorkorderBlamerListener implements EventSubscriberInterface
 {
@@ -22,9 +22,9 @@ class WorkorderBlamerListener implements EventSubscriberInterface
         $workorder = $event->getWorkorder();
         $username = $this->securityContext->getToken()->getUser()->getUsername();
 
-        if($this->manager->isNewWorkorder($workorder)) {
+        if ($this->manager->isNewWorkorder($workorder)) {
             $workorder->setCreatedBy($username);
-        }else{
+        } else {
             $workorder->setUpdatedBy($username);
         }
     }

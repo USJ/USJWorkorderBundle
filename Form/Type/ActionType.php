@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType,
@@ -10,17 +10,17 @@ use Symfony\Component\Form\AbstractType,
     Symfony\Component\Form\FormEvents,
     Symfony\Component\Form\Event\DataEvent;
 /**
-* 
+*
 */
 class ActionType extends AbstractType
 {
     protected $workorderClass;
 
     public function __construct($workorderClass)
-    {   
+    {
         $this->workorderClass = $workorderClass;
     }
-    
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('status', 'choice');

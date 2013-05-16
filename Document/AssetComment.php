@@ -2,7 +2,6 @@
 namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @MongoDB\MappedSuperclass

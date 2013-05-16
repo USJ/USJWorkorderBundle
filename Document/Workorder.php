@@ -3,7 +3,6 @@ namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Symfony\Component\Validator\Constraints as Assert;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 use MDB\WorkorderBundle\Model\WorkorderInterface;
 /**
@@ -80,7 +79,6 @@ class Workorder implements WorkorderInterface
      */
     protected $estimatedDuration;
 
-
     public function __construct()
     {
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
@@ -99,24 +97,27 @@ class Workorder implements WorkorderInterface
     public function addAssignee($assignee)
     {
         $this->assignees[] = $assignee;
+
         return $this;
     }
 
     public function removeAssignee($assignee)
     {
         unset($this->assignees[array_search($assignee, $this->assignees)]);
+
         return $this;
     }
 
     /**
      * Set status
      *
-     * @param string $status
+     * @param  string $status
      * @return Order
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -133,12 +134,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set type
      *
-     * @param string $type
+     * @param  string $type
      * @return Order
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -155,12 +157,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set created
      *
-     * @param timestamp $created
+     * @param  timestamp $created
      * @return Order
      */
     public function setCreated($created)
     {
         $this->created = $created;
+
         return $this;
     }
 
@@ -177,12 +180,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set updated
      *
-     * @param date $updated
+     * @param  date  $updated
      * @return Order
      */
     public function setUpdated($updated)
     {
         $this->updated = $updated;
+
         return $this;
     }
 
@@ -199,12 +203,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set createdAt
      *
-     * @param timestamp $createdAt
+     * @param  timestamp $createdAt
      * @return Order
      */
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
         return $this;
     }
 
@@ -221,12 +226,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set updatedAt
      *
-     * @param date $updatedAt
+     * @param  date  $updatedAt
      * @return Order
      */
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+
         return $this;
     }
 
@@ -243,12 +249,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string $title
      * @return Order
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -265,12 +272,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Order
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -284,16 +292,16 @@ class Workorder implements WorkorderInterface
         return $this->description;
     }
 
-
     /**
      * Set priority
      *
-     * @param string $priority
+     * @param  string     $priority
      * @return \Workorder
      */
     public function setPriority($priority)
     {
         $this->priority = $priority;
+
         return $this;
     }
 
@@ -310,12 +318,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set createdBy
      *
-     * @param string $createdBy
+     * @param  string     $createdBy
      * @return \Workorder
      */
     public function setCreatedBy($createdBy)
     {
         $this->createdBy = $createdBy;
+
         return $this;
     }
 
@@ -332,12 +341,13 @@ class Workorder implements WorkorderInterface
     /**
      * Set updatedBy
      *
-     * @param string $updatedBy
+     * @param  string     $updatedBy
      * @return \Workorder
      */
     public function setUpdatedBy($updatedBy)
     {
         $this->updatedBy = $updatedBy;
+
         return $this;
     }
 
@@ -368,18 +378,21 @@ class Workorder implements WorkorderInterface
     public function setComments($comments)
     {
         $this->comments = $comments;
+
         return $this;
     }
 
     public function addComment($comment)
     {
         $this->comments->add($comment);
+
         return $this;
     }
 
     public function removeComment($comment)
     {
         $this->comments->removeElement($comment);
+
         return $this;
     }
 
@@ -401,6 +414,7 @@ class Workorder implements WorkorderInterface
     public function setTags($tags)
     {
         $this->tags = $tags;
+
         return $this;
     }
 
@@ -412,6 +426,7 @@ class Workorder implements WorkorderInterface
     public function setEstimatedDuration($duration=0)
     {
         $this->estimatedDuration = $duration;
+
         return $this;
     }
 }

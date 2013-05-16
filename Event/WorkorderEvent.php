@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;

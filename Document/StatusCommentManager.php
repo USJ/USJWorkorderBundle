@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 /**
-* 
+*
 */
 class StatusCommentManager
 {
@@ -21,6 +21,7 @@ class StatusCommentManager
     public function createStatusComment()
     {
         $class = $this->class;
+
         return new $class;
     }
 }

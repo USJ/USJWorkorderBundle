@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 /**
-* 
+*
 */
 class CommentManager
 {
@@ -21,6 +21,7 @@ class CommentManager
     public function createComment()
     {
         $class = $this->class;
+
         return new $class;
     }
 }

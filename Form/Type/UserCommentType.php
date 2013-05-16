@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType,
@@ -11,7 +11,7 @@ use Symfony\Component\Form\AbstractType,
     Symfony\Component\Form\Event\DataEvent;
 
 /**
-* 
+*
 */
 class UserCommentType extends AbstractType
 {

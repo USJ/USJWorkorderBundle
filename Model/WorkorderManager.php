@@ -32,21 +32,22 @@ abstract class WorkorderManager implements WorkorderManagerInterface
         $newWo->setOrganizationCode(null);
 
         $oldStatus = $workorder->getStatus();
-        if($oldStatus == 'CLOSE') {
-            if(count($workorder->getAssignees())){
+        if ($oldStatus == 'CLOSE') {
+            if (count($workorder->getAssignees())) {
                 $newWo->setStatus('ASSIGN');
-            }else{
+            } else {
                 $newWo->setStatus('REQUEST');
             }
         }
 
-        if($workorder->getAsset()) {
+        if ($workorder->getAsset()) {
             $newWo->setAsset($workorder->getAsset());
         }
 
-        if($persist) {
+        if ($persist) {
             $this->saveWorkorder($newWo);
         }
+
         return $newWo;
     }
 

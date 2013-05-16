@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\EventListener;
 
 use Doctrine\ODM\MongoDB\Event\PreUpdateEventArgs;
@@ -30,7 +30,7 @@ class AssigneesChangeListener
 
             $assignComments = array();
             // if number of assignees before is more than after
-            if(count($oldAssignees) > count($newAssignees)) {
+            if (count($oldAssignees) > count($newAssignees)) {
                 // then it is removed action
                 // there less new assignees, find out the assignees that has removed.
                 $removedAssignees = array_diff($oldAssignees, $newAssignees);
@@ -40,7 +40,7 @@ class AssigneesChangeListener
                     $assignComment->deassign($removedAssignee);
                     $assignComments[] = $assignComment;
                 }
-            }elseif(count($oldAssignees) < count($newAssignees)){
+            } elseif (count($oldAssignees) < count($newAssignees)) {
                 $oldAssignees = is_array($oldAssignees) ? $oldAssignees:array();
                 $addedAssignees = array_diff($newAssignees, $oldAssignees);
 

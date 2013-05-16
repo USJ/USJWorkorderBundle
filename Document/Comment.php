@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @MongoDB\MappedSuperclass
  */
-abstract class Comment 
+abstract class Comment
 {
     /**
      * @MongoDB\String
@@ -30,8 +30,8 @@ abstract class Comment
      */
     protected $updatedBy;
 
-    /** 
-     * @MongoDB\Timestamp 
+    /**
+     * @MongoDB\Timestamp
      */
     protected $createdAt;
 
@@ -43,12 +43,13 @@ abstract class Comment
     /**
      * Set type
      *
-     * @param string $type
+     * @param  string   $type
      * @return \Comment
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -65,12 +66,13 @@ abstract class Comment
     /**
      * Set createdBy
      *
-     * @param string $createdBy
+     * @param  string   $createdBy
      * @return \Comment
      */
     public function setCreatedBy($createdBy)
     {
         $this->createdBy = $createdBy;
+
         return $this;
     }
 
@@ -87,12 +89,13 @@ abstract class Comment
     /**
      * Set updatedBy
      *
-     * @param string $updatedBy
+     * @param  string   $updatedBy
      * @return \Comment
      */
     public function setUpdatedBy($updatedBy)
     {
         $this->updatedBy = $updatedBy;
+
         return $this;
     }
 
@@ -109,12 +112,13 @@ abstract class Comment
     /**
      * Set createAt
      *
-     * @param timestamp $createAt
+     * @param  timestamp $createAt
      * @return \Comment
      */
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
         return $this;
     }
 
@@ -131,12 +135,13 @@ abstract class Comment
     /**
      * Set updatedAt
      *
-     * @param timestamp $updatedAt
+     * @param  timestamp $updatedAt
      * @return \Comment
      */
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+
         return $this;
     }
 

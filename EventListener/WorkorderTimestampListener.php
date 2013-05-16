@@ -5,7 +5,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use MDB\WorkorderBundle\Events;
 
 /**
-* 
+*
 */
 class WorkorderTimestampListener implements EventSubscriberInterface
 {
@@ -20,9 +20,9 @@ class WorkorderTimestampListener implements EventSubscriberInterface
     {
         $workorder = $event->getWorkorder();
 
-        if($this->manager->isNewWorkorder($workorder)) {
+        if ($this->manager->isNewWorkorder($workorder)) {
             $workorder->setCreatedAt(time());
-        }else{
+        } else {
             $workorder->setUpdatedAt(time());
         }
     }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
@@ -22,6 +22,7 @@ abstract class Status
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 }

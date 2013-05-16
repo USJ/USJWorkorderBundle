@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle;
 /**
-* 
+*
 */
 final class CommentTypes
 {
@@ -11,6 +11,7 @@ final class CommentTypes
     public function getCommentTypes()
     {
         $reflect = new ReflectionClass(get_class($this));
+
         return $reflect->getConstants();
     }
 }

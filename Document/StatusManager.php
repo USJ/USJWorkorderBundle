@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace MDB\WorkorderBundle\Document;
 
-use Doctrine\ODM\MongoDB\DocumentManager;
 /**
-* 
+*
 */
 class StatusManager
 {
@@ -19,7 +18,7 @@ class StatusManager
         $this->dm = $dm;
         $this->repository = $this->dm->getRepository($class);
     }
-    
+
     public function findAllStatuses()
     {
         return $this->repository->findAll();

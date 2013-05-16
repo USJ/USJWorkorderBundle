@@ -9,7 +9,6 @@ use Symfony\Component\Form\AbstractType,
     Symfony\Component\Form\FormView,
     Symfony\Component\Form\FormEvents,
     Symfony\Component\Form\Event\DataEvent;
-use MDB\WorkorderBundle\Status;
 
 class WorkrequestType extends AbstractType
 {

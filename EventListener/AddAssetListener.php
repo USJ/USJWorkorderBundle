@@ -1,7 +1,6 @@
 <?php
 namespace MDB\WorkorderBundle\EventListener;
 
-
 use Doctrine\ODM\MongoDB\Event\PreUpdateEventArgs;
 use MDB\WorkorderBundle\Model\WorkorderInterface;
 
@@ -20,7 +19,7 @@ class AddAssetListener
     public function preUpdate(PreUpdateEventArgs $args)
     {
         $document = $args->getDocument();
-        if($document instanceof WorkorderInterface && $args->hasChangedField('assets')) {
+        if ($document instanceof WorkorderInterface && $args->hasChangedField('assets')) {
             $dm = $args->getDocumentManager();
 
             $oldAssets = $args->getOldValue('assets')->toArray();
@@ -28,7 +27,7 @@ class AddAssetListener
 
             $assetComments = array();
             // if number of assignees before is more than after
-            if(count($oldAssets) > count($newAssets)) {
+            if (count($oldAssets) > count($newAssets)) {
                 // then it is removed action
                 // there less new assignees, find out the assignees that has removed.
                 $removedAssets = array_diff($oldAssets, $newAssets);
@@ -38,7 +37,7 @@ class AddAssetListener
                     $assetComment->disassociate($removedAsset);
                     $assetComments[] = $assetComment;
                 }
-            }elseif(count($oldAssets) < count($newAssets)){
+            } elseif (count($oldAssets) < count($newAssets)) {
                 $oldAssets = is_array($oldAssets) ? $oldAssets:array();
                 $addedAssets = array_diff($newAssets, $oldAssets);
 
@@ -47,10 +46,10 @@ class AddAssetListener
                     $assetComment->associate($addedAsset);
                     $assetComments[] = $assetComment;
                 }
-            }elseif(count($oldAssets) == count($newAssets)){
+            } elseif (count($oldAssets) == count($newAssets)) {
 
                 // WARNING: work with single asset only.
-                if($oldAssets[0]->getId() != $newAssets[0]->getId()) {
+                if ($oldAssets[0]->getId() != $newAssets[0]->getId()) {
                     $assetComment = new $this->assetCommentClass;
                     $assetComment->changeAsset($oldAssets[0], $newAssets[0]);
                     $assetComments[] = $assetComment;

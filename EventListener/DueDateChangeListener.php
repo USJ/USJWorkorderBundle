@@ -27,11 +27,11 @@ class DueDateChangeListener
 
             $comment = new $this->dueDateCommentClass;
 
-            if(is_null($args->getOldValue('dueDate')) && !is_null($args->getNewValue('dueDate'))) {
+            if (is_null($args->getOldValue('dueDate')) && !is_null($args->getNewValue('dueDate'))) {
                 $comment->setDueDate($args->getNewValue('dueDate'));
-            }elseif($args->getOldValue('dueDate') && $args->getNewValue('dueDate')){
+            } elseif ($args->getOldValue('dueDate') && $args->getNewValue('dueDate')) {
                 $comment->changeDueDate($args->getOldValue('dueDate'), $args->getNewValue('dueDate'));
-            }elseif($args->getOldValue('dueDate') && is_null($args->getNewValue('dueDate'))) {
+            } elseif ($args->getOldValue('dueDate') && is_null($args->getNewValue('dueDate'))) {
                 $comment->removeDueDate($args->getOldValue('dueDate'));
             }
 
