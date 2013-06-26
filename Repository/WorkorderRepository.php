@@ -41,4 +41,13 @@ class WorkorderRepository extends DocumentRepository
 //             ->getQuery()
 //             ->execute();
     }
+
+    public function findDistinctTags()
+    {
+        return $this->createQueryBuilder()
+            ->distinct('tags')
+            ->hydrate(false)
+            ->getQuery()
+            ->execute();
+    }
 }
