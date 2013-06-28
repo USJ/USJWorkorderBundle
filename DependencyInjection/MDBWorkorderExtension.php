@@ -37,7 +37,7 @@ class MDBWorkorderExtension extends Extension
         $container->setParameter('mdb_workorder.model.type_comment.class', $config['class']['model']['type_comment']);
         $container->setParameter('mdb_workorder.model.priority_comment.class', $config['class']['model']['priority_comment']);
 
-        $container->setParameter('mdb_workorder.search_provider.workorder.class', $config['class']['search_provider']['workorder']);
+        // $container->setParameter('mdb_workorder.search_provider.workorder.class', $config['class']['search_provider']['workorder']);
 
         $container->setAlias('mdb_workorder.manager.workorder', $config['service']['manager']['workorder']);
         $container->setAlias('mdb_workorder.manager.status', $config['service']['manager']['status']);
