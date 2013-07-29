@@ -15,9 +15,3 @@ services:
     mdb_workorder.manager.status_comment.default:
         class: MDB\WorkorderBundle\Document\StatusCommentManager
         arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", %mdb_workorder.model.status_comment.class%]
-
-    # mdb_workorder.search_provider.workorder:
-    #     class: %mdb_workorder.search_provider.workorder.class%
-    #     arguments: ["@foq_elastica.index.mdb_workorder.workorder", %mdb_workorder.model.workorder.class%,  "@doctrine_mongodb" ]
-    #     tags:
-    #         - { name: foq_elastica.provider , index: mdb_workorder, type: workorder}
