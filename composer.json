@@ -25,6 +25,11 @@
         "psr-0": { "MDB\\WorkorderBundle\\": "" }
     },
 
-    "target-dir": "MDB/WorkorderBundle"
+    "target-dir": "MDB/WorkorderBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
 
 }
