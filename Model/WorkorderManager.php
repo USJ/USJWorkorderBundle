@@ -77,9 +77,9 @@ abstract class WorkorderManager implements WorkorderManagerInterface
         return $this->repository->findOneById($id);
     }
 
-    public function findWorkordersBy($criteria)
+    public function findWorkordersBy(array $criteria, array $sort = null, $limit = null, $skip = null)
     {
-        return $this->repository->findBy($criteria);
+        return $this->repository->findBy($criteria, $sort, $limit, $skip);
     }
 
     public function getRepository()

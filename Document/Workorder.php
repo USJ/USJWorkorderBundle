@@ -96,7 +96,7 @@ class Workorder implements WorkorderInterface
 
     public function addAssignee($assignee)
     {
-        $this->assignees[] = $assignee;
+        $this->assignees->add($assignee);
 
         return $this;
     }
