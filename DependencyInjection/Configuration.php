@@ -22,6 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('listener')->defaultValue(true)->end()
                 ->arrayNode('status')
                     ->prototype('scalar')->end()
                 ->end()

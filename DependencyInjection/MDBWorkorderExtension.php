@@ -24,7 +24,11 @@ class MDBWorkorderExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
-        $loader->load('listeners.yml');
+
+        if ($config['listener']) {
+            $loader->load('listeners.yml');
+        }
+        
         $loader->load('forms.yml');
 
         $container->setParameter('mdb_workorder.model.workorder.class', $config['class']['model']['workorder']);
