@@ -51,7 +51,7 @@ abstract class WorkorderManager implements WorkorderManagerInterface
         return $newWo;
     }
 
-    public function saveWorkorder($workOrder)
+    public function saveWorkorder(WorkorderInterface $workOrder)
     {
         $event = new WorkorderEvent($workOrder);
         $this->dispatcher->dispatch(Events::WORKORDER_PRE_PERSIST, $event);

@@ -1,0 +1,4 @@
+MDB\WorkorderBundle\Document\Workorder:
+    getters:
+        workRequest:
+            - IsTrue: { message: 'Is not a request', groups: [workrequest] }

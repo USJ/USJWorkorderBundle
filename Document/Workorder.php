@@ -1,81 +1,55 @@
 <?php
 namespace MDB\WorkorderBundle\Document;
 
-use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Symfony\Component\Validator\Constraints as Assert;
-
 use MDB\WorkorderBundle\Model\WorkorderInterface;
+
 /**
- * @MongoDB\MappedSuperclass
+ * {@inheritdoc}
  */
 class Workorder implements WorkorderInterface
 {
     /**
-     * @MongoDB\String
+     * {@inheritdoc}
      */
     protected $title;
 
     /**
-     * @MongoDB\String
+     * {@inheritdoc}
      */
     protected $description;
 
     /**
-     * @MongoDB\String
+     * {@inheritdoc}
      */
     protected $type;
 
     /**
-     * @MongoDB\Int
+     * {@inheritdoc}
      */
     protected $priority;
 
-     /**
-     * @var timestamp $created
-     *
-     * @MongoDB\Timestamp
-     */
-    protected $createdAt;
-
     /**
-     * @var date $updated
-     *
-     * @MongoDB\Timestamp
-     */
-    protected $updatedAt;
-
-    /**
-     * @MongoDB\String
-     */
-    protected $createdBy;
-
-    /**
-     * @MongoDB\String
-     */
-    protected $updatedBy;
-
-    /**
-     * @MongoDB\Collection
+     * {@inheritdoc}
      */
     protected $assignees = array();
 
     /**
-     * @MongoDB\Collection
+     * {@inheritdoc}
      */
     protected $tags = array();
 
     /**
-     * @MongoDB\Date
+     * {@inheritdoc}
      */
     protected $dueDate;
 
     /**
-     * @MongoDB\String
+     * {@inheritdoc}
      */
     protected $status;
 
     /**
-     * @MongoDB\Int
+     * {@inheritdoc}
      */
     protected $estimatedDuration;
 
@@ -155,98 +129,6 @@ class Workorder implements WorkorderInterface
     }
 
     /**
-     * Set created
-     *
-     * @param  timestamp $created
-     * @return Order
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return timestamp $created
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param  date  $updated
-     * @return Order
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return date $updated
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param  timestamp $createdAt
-     * @return Order
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return timestamp $createdAt
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param  date  $updatedAt
-     * @return Order
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedAt
-     *
-     * @return date $updatedAt
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-
-    /**
      * Set title
      *
      * @param  string $title
@@ -315,59 +197,9 @@ class Workorder implements WorkorderInterface
         return $this->priority;
     }
 
-    /**
-     * Set createdBy
-     *
-     * @param  string     $createdBy
-     * @return \Workorder
-     */
-    public function setCreatedBy($createdBy)
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * Get createdBy
-     *
-     * @return string $createdBy
-     */
-    public function getCreatedBy()
-    {
-        return $this->createdBy;
-    }
-
-    /**
-     * Set updatedBy
-     *
-     * @param  string     $updatedBy
-     * @return \Workorder
-     */
-    public function setUpdatedBy($updatedBy)
-    {
-        $this->updatedBy = $updatedBy;
-
-        return $this;
-    }
-
-    /**
-     * Get updatedBy
-     *
-     * @return string $updatedBy
-     */
-    public function getUpdatedBy()
-    {
-        return $this->updatedBy;
-    }
-
-    /**
-     * @Assert\True(message="Is not a request", groups={"workrequest"})
-     */
     public function isWorkRequest()
     {
         return $this->status == "REQUEST";
-;
     }
 
     public function getComments()

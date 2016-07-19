@@ -9,7 +9,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 abstract class UserComment extends Comment
 {
     /**
-     * @MongoDB\String
+     * {@inheritdoc}
      */
     protected $body;
 

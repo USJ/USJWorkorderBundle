@@ -1,0 +1,6 @@
+MDB\WorkorderBundle\Document\UserComment:
+    type: mappedSuperclass
+    fields:
+        body:
+            type: string
+

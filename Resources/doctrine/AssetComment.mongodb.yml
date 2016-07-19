@@ -1,0 +1,6 @@
+MDB\WorkorderBundle\Document\AssetComment:
+    type: mappedSuperclass
+    fields:
+        changeType:
+            type: int
+

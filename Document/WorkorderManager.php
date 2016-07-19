@@ -3,6 +3,7 @@ namespace MDB\WorkorderBundle\Document;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
 use MDB\WorkorderBundle\Model\WorkorderManager as BaseWorkorderManager;
+use MDB\WorkorderBundle\Model\WorkorderInterface;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -61,7 +62,7 @@ class WorkorderManager extends BaseWorkorderManager
         $this->dm->flush();
     }
 
-    public function deleteWorkorder($workorder)
+    public function deleteWorkorder(WorkorderInterface $workorder)
     {
         $this->dm->remove($workorder);
         $this->dm->flush();

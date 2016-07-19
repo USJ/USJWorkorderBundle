@@ -1,0 +1,15 @@
+MDB\WorkorderBundle\Document\Comment:
+    type: mappedSuperclass
+    fields:
+        body:
+            type: string
+        type:
+            type: string
+        createdBy:
+            type: string
+        updatedBy:
+            type: string
+        createdAt:
+            type: date
+        updatedAt:
+            type: date

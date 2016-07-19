@@ -16,7 +16,7 @@ abstract class AssetComment extends Comment
     protected $changeTo;
 
     /**
-     * @MongoDB\Int
+     * @var int
      */
     protected $changeType;
 

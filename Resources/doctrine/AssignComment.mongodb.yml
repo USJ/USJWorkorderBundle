@@ -1,0 +1,8 @@
+MDB\WorkorderBundle\Document\AssignComment:
+    type: mappedSuperclass
+    fields:
+        assignee:
+            type: string
+        add:
+            type: boolean
+

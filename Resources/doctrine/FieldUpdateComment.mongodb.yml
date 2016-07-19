@@ -1,0 +1,9 @@
+MDB\WorkorderBundle\Document\FieldUpdateComment:
+    type: mappedSuperclass
+    fields:
+        old:
+            type: raw
+        new:
+            type: raw
+        field:
+            type: string

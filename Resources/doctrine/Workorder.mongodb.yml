@@ -1,0 +1,29 @@
+MDB\WorkorderBundle\Document\Workorder:
+    type: mappedSuperclass
+    fields:
+        title:
+            type: string
+        description:
+            type: string
+        type:
+            type: string
+        status:
+            type: string
+        estimatedDuration:
+            type: int
+        priority:
+            type: string
+        createdAt:
+            type: date
+        updatedAt:
+            type: date
+        createdBy:
+            type: string
+        updatedBy:
+            type: string
+        assignees:
+            type: collection
+        tags:
+            type: collection
+        dueDate:
+            type: date
