@@ -10,13 +10,10 @@ abstract class AssignComment extends Comment
 {
     /**
      * Username of the assignee
-     *
-     * @MongoDB\String
      */
     protected $assignee;
 
     /**
-     * @MongoDB\Boolean
      */
     protected $add;
 
