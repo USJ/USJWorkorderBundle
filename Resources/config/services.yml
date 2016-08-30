@@ -2,16 +2,16 @@ services:
     # Managers
     mdb_workorder.manager.workorder.default:
         class: MDB\WorkorderBundle\Document\WorkorderManager
-        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", %mdb_workorder.model.workorder.class%]
+        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", '%mdb_workorder.model.workorder.class%']
 
     mdb_workorder.manager.status.default:
         class: MDB\WorkorderBundle\Document\StatusManager
-        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", %mdb_workorder.model.status.class%]
+        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", '%mdb_workorder.model.status.class%']
 
     mdb_workorder.manager.user_comment.default:
         class: MDB\WorkorderBundle\Document\UserCommentManager
-        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", %mdb_workorder.model.user_comment.class%]
+        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", '%mdb_workorder.model.user_comment.class%']
 
     mdb_workorder.manager.status_comment.default:
         class: MDB\WorkorderBundle\Document\StatusCommentManager
-        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", %mdb_workorder.model.status_comment.class%]
+        arguments: ["@event_dispatcher", "@doctrine.odm.mongodb.document_manager", '%mdb_workorder.model.status_comment.class%']
