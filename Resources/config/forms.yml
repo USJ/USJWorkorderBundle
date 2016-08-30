@@ -2,41 +2,54 @@ services:
     # Form Type
     mdb_workorder.form_type.workorder:
         class: MDB\WorkorderBundle\Form\Type\WorkorderType
-        arguments: [%mdb_workorder.model.workorder.class%]
+        arguments: ['%mdb_workorder.model.workorder.class%']
         tags:
             - { name: form.type, alias: mdb_workorder_workorder }
 
     mdb_workorder.form_type.workrequest:
         class: MDB\WorkorderBundle\Form\Type\WorkrequestType
-        arguments: [%mdb_workorder.model.workorder.class%]
+        arguments: ['%mdb_workorder.model.workorder.class%']
         tags:
             - { name: form.type, alias: mdb_workorder_workrequest }
 
     mdb_workorder.form_type.action:
         class: MDB\WorkorderBundle\Form\Type\ActionType
-        arguments: [%mdb_workorder.model.workorder.class%]
+        arguments: ['%mdb_workorder.model.workorder.class%']
         tags:
             - { name: form.type, alias: mdb_workorder_action }
 
     mdb_workorder.form_type.workorder.user_comment:
         class: MDB\WorkorderBundle\Form\Type\UserCommentType
-        arguments: [%mdb_workorder.model.user_comment.class%]
+        arguments: ['%mdb_workorder.model.user_comment.class%']
         tags:
             - { name: form.type, alias: mdb_workorder_workorder_user_comment }
 
     # Form Factory
     mdb_workorder.form_factory.workrequest:
         class: MDB\WorkorderBundle\Form\Factory\FormFactory
-        arguments: [@form.factory, %mdb_workorder.form_type.workrequest.name%, %mdb_workorder.form_type.workrequest.type%, ["workrequest"]]
+        arguments:
+            - '@form.factory'
+            - '%mdb_workorder.form_type.workrequest.name%'
+            - '%mdb_workorder.form_type.workrequest.type%'
+            - ["workrequest"]
 
     mdb_workorder.form_factory.workorder:
         class: MDB\WorkorderBundle\Form\Factory\FormFactory
-        arguments: [@form.factory,  %mdb_workorder.form_type.workorder.name%, %mdb_workorder.form_type.workorder.type%]
+        arguments:
+            - '@form.factory'
+            - '%mdb_workorder.form_type.workorder.name%'
+            - '%mdb_workorder.form_type.workorder.type%'
 
     mdb_workorder.form_factory.workorder_user_comment:
         class: MDB\WorkorderBundle\Form\Factory\FormFactory
-        arguments: [@form.factory,  %mdb_workorder.form_type.workorder.user_comment.name%, %mdb_workorder.form_type.workorder.user_comment.type%]
+        arguments:
+            - '@form.factory'
+            - '%mdb_workorder.form_type.workorder.user_comment.name%'
+            - '%mdb_workorder.form_type.workorder.user_comment.type%'
 
     mdb_workorder.form_factory.action:
         class: MDB\WorkorderBundle\Form\Factory\FormFactory
-        arguments: [@form.factory,  %mdb_workorder.form_type.action.name%, %mdb_workorder.form_type.action.type%]
+        arguments:
+            - '@form.factory'
+            - '%mdb_workorder.form_type.action.name%'
+            - '%mdb_workorder.form_type.action.type%'
